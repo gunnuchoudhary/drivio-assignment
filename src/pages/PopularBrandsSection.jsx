@@ -125,7 +125,7 @@ export default function PopularBrandsSection() {
               ))}
 
               {showViewAllCard && (
-                <div className="bg-white cursor-pointer border border-gray-200 rounded-xl hover:shadow-xl transition-shadow duration-300 flex items-center justify-center p-4 text-gray-600 font-semibold text-base md:text-lg h-[250px] sm:h-[260px] md:h-[280px]">
+                  <div className="bg-white cursor-pointer border border-gray-200 rounded-xl hover:shadow-xl transition-shadow duration-300 flex items-center justify-center p-4 text-gray-600 font-semibold text-base md:text-lg h-[200px] sm:h-[150px] md:h-[200px]">
                   View All
                 </div>
               )}
