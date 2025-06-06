@@ -6,18 +6,36 @@ const HeroSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleApplyNow = () => {
-    if (!mobileNumber.trim()) {
+    const trimmedNumber = mobileNumber.trim();
+
+    if (!trimmedNumber) {
       setMobileError('Please enter your mobile number');
       setSubmitted(false);
       return;
     }
+    // Regex: Only digits allowed, length 10
+    const isValidNumber = /^\d{10}$/.test(trimmedNumber);
+    if (!isValidNumber) {
+      setMobileError('Please enter a valid 10-digit mobile number');
+      setSubmitted(false);
+      return;
+    }
+
     setMobileError('');
     setSubmitted(true);
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 1000);
   };
 
   const handleMobileChange = (e) => {
-    setMobileNumber(e.target.value);
-    if (e.target.value.trim()) setMobileError('');
+    // Allow only digits while typing
+    const input = e.target.value;
+    if (/^\d*$/.test(input)) {
+      setMobileNumber(input);
+      if (input.trim()) setMobileError('');
+    }
   };
 
   return (
@@ -52,6 +70,7 @@ const HeroSection = () => {
               bg-white text-gray-700 placeholder-gray-500 ${
                 mobileError ? 'border-red-500 focus:ring-red-500' : 'border-gray-300'
               }`}
+            maxLength={10}
           />
           <button
             onClick={handleApplyNow}
@@ -67,12 +86,12 @@ const HeroSection = () => {
         )}
       </div>
       <div className="relative w-[280px] h-[320px] sm:w-[320px] sm:h-[380px] md:w-[400px] md:h-[480px]">
-  <img
-    src="/images/img_get_your_two_wheeler_financed_from_drivio.png"
-    alt="Get your two wheeler financed from Drivio"
-    className="absolute top-0 left-0 w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] object-cover"
-  />
-</div>
+        <img
+          src="/images/img_get_your_two_wheeler_financed_from_drivio.png"
+          alt="Get your two wheeler financed from Drivio"
+          className="absolute top-0 left-0 w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] object-cover"
+        />
+      </div>
     </section>
   );
 };
