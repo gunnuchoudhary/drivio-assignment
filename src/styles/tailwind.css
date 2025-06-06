@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-green: #4d9c78;
+    --primary-green-light: #6bb394;
+    --primary-green-dark: #3a7a5c;
+    
+    /* Secondary Colors */
+    --secondary-gray: #333333;
+    --secondary-gray-light: #666666;
+    --secondary-gray-dark: #1a1a1a;
+    
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-gray-light: #f3f3f3;
+    --bg-gray-medium: #f6f9fc;
+    
+    /* Text Colors */
+    --text-primary: #171717;
+    --text-secondary: #333333;
+    --text-muted: #7d7d7d;
+    --text-light: #969696;
+    
+    /* Border Colors */
+    --border-light: #cbcbcb;
+    --border-medium: #eeeeee;
+    --border-dark: #7070704c;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-green {
+    background-color: var(--primary-green);
+  }
+  
+  .bg-primary-green-light {
+    background-color: var(--primary-green-light);
+  }
+  
+  .bg-primary-green-dark {
+    background-color: var(--primary-green-dark);
+  }
+  
+  .bg-secondary-gray {
+    background-color: var(--secondary-gray);
+  }
+  
+  .bg-gray-light {
+    background-color: var(--bg-gray-light);
+  }
+  
+  .bg-gray-medium {
+    background-color: var(--bg-gray-medium);
+  }
+  
+  /* Text Color Utilities */
+  .text-primary-green {
+    color: var(--primary-green);
+  }
+  
+  .text-secondary-gray {
+    color: var(--secondary-gray);
+  }
+  
+  .text-muted {
+    color: var(--text-muted);
+  }
+  
+  .text-light {
+    color: var(--text-light);
+  }
+  
+  /* Border Color Utilities */
+  .border-light {
+    border-color: var(--border-light);
+  }
+  
+  .border-medium {
+    border-color: var(--border-medium);
+  }
+  
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+  
+  /* Custom Gradient Utilities */
+  .gradient-overlay {
+    background: linear-gradient(180deg, #2d2c2c00 0%, #2d2c2c7f 100%);
+  }
+  
+  /* Custom Shadow Utilities */
+  .shadow-card {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+}
